@@ -2,13 +2,11 @@ import request
 
 
 def part_one(entries):
-    while entries:
-        a = entries.pop()
+    for a in entries:
         b = 2020 - a
 
         if b in inputs:
-            print(a * b)
-            return
+            return a * b
 
 
 def part_two(entries):
@@ -19,8 +17,7 @@ def part_two(entries):
             c = 2020 - a - b
 
             if c in inputs:
-                print(a * b * c)
-                return
+                return a * b * c
 
 
 if __name__ == '__main__':
@@ -28,5 +25,5 @@ if __name__ == '__main__':
 
     if text:
         inputs = set([int(entry) for entry in text.split()])
-        part_one(inputs)
-        part_two(inputs)
+        print(part_one(inputs))
+        print(part_two(inputs))
